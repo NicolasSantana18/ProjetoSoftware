@@ -18,17 +18,6 @@ public class Lanche {
         this.disponivel = estoque > 0;
     }
 
-
-    //toString
-    @Override
-    public String toString() {
-        return "Nome:'" + nome +
-                "\nDescricao: " + descricao +
-                "\nvalor: " + valor +
-                "\nestoque: " + estoque +
-                "\ndisponivel: " + disponivel;
-    }
-
     //Getters
     public String getNome() {
         return nome;
@@ -57,11 +46,20 @@ public class Lanche {
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        if (descricao.isBlank()) {
+            System.out.println("Informe uma descrição VÁLIDA");
+        } else  {
+            this.descricao = descricao;
+        }
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        if (valor <= 0) {
+            System.out.println("Informe um valor maior que zero\n");
+        } else {
+            this.valor = valor;
+            System.out.println("Valor Alterado com sucesso!\n");
+        }
     }
 
     public void setEstoque(int estoque) {
@@ -70,5 +68,50 @@ public class Lanche {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    //Metodo para verificar a disponibilidade do estoque
+    private void verificaDisponivel() {
+        this.disponivel = this.estoque > 0;
+    }
+
+
+    //Metodo do pedido
+    public boolean decrementaEstoque(int quantidade) {
+        if (quantidade > 0 && quantidade <= this.estoque) {
+            this.estoque -= quantidade;
+            this.verificaDisponivel();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Calcula o valor total do pedido
+    public double valorTotal(int quantidade) {
+        return this.valor * quantidade;
+    }
+
+
+    public void incrementaEstoque(int quantidadeEstoque) {
+        if (quantidadeEstoque > 0) {
+            this.estoque += quantidadeEstoque;
+            this.verificaDisponivel();
+            System.out.println(this.estoque + " lanches foram adicionados ao estoque!");
+        } else {
+            System.out.println("Valor Inválido");
+        }
+    }
+
+
+
+    //toString
+    @Override
+    public String toString() {
+        return "\nNome: " + nome +
+                "\nDescrição: " + descricao +
+                "\nValor: R$" + valor +
+                "\nEstoque: " + estoque +
+                "\nDisponível: " + disponivel;
     }
 }
