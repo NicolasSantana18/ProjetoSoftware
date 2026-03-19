@@ -16,7 +16,7 @@ public class Cachorro extends Animal {
     }
 
 
-    
+
     //Getters e Setters
     public String getRaca() {
         return raca;
