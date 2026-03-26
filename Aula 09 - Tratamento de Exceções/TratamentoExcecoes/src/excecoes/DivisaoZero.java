@@ -10,11 +10,11 @@ public class DivisaoZero {
 
         try {
             System.out.print("Digite um valor: ");
-            double n1 = sc.nextInt();
+            double n1 = sc.nextDouble();
             sc.nextLine();
 
             System.out.println("Digite outro valor: ");
-            double n2 = sc.nextInt();
+            double n2 = sc.nextDouble();
             sc.nextLine();
 
             double resultado = n1 / n2;
