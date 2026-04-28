@@ -21,7 +21,7 @@ public class ProdutoEletrônico extends Produto {
     @Override
     public String toString() {
         return " Produto Eletrônico " + super.toString()
-                + "descricao: " + garantiaMeses + "|";
+                + " | Descrição: " + garantiaMeses + "|";
     }
 
     public void setGarantia(int garantiaMeses) {

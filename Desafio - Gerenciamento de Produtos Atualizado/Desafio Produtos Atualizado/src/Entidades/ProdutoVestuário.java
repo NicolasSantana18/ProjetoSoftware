@@ -20,6 +20,6 @@ public class ProdutoVestuário extends Produto {
     @Override
     public String toString() {
         return " Produto Vestuário " + super.toString()
-                + "Tamanho: " + tamanho + "|";
+                + "| Tamanho: " + tamanho + "|";
     }
 }

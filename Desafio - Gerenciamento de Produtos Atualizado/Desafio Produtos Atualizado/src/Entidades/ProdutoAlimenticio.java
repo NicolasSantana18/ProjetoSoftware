@@ -23,6 +23,6 @@ public class ProdutoAlimenticio extends Produto{
     @Override
     public String toString() {
         return " Produto Alimenticio " + super.toString()
-        + "Data de Validade: " + dataValidade + "|";
+        + " | Data de Validade: " + dataValidade + "|";
     }
 }

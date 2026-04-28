@@ -8,17 +8,17 @@ public class GerenciarProdutos {
 
     public void cadastroProdutoEletronico(Produto produto) {
         listaProdutos.add(produto);
-        System.out.println("Produto Cadastrado");
+        System.out.println("Produto eletrônico Cadastrado com sucesso!");
     }
 
     public void cadastroProdutoVestuário(Produto produto) {
         listaProdutos.add(produto);
-        System.out.println("Produto Cadastrado");
+        System.out.println("Produto vestuário Cadastrado com sucesso!");
     }
 
     public void cadastroProdutoAlimentício(Produto produto) {
         listaProdutos.add(produto);
-        System.out.println("Produto Cadastrado");
+        System.out.println("Produto alimentício Cadastrado com sucesso!");
     }
 
 
@@ -81,7 +81,7 @@ public class GerenciarProdutos {
 
         Produto produto = listaProdutos.get(id);
         listaProdutos.remove(id);
-        System.out.println("Produto removido");
+        System.out.println("Produto removido com Sucesso");
     }
 
 }

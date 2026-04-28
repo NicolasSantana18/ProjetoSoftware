@@ -38,12 +38,12 @@ public class main {
 
                     System.out.println("Digite a garantia do produto: ");
                     int garantiaMeses = sc.nextInt();
+                    sc.nextLine();
 
 
                     ProdutoEletrônico produto = new ProdutoEletrônico(nome, preco, quantidade, garantiaMeses);
 
                     lista.cadastroProdutoEletronico(produto);
-                    System.out.println("Produto Cadastrado com sucesso!");
 
                 }
                 case "2" -> {
@@ -65,8 +65,6 @@ public class main {
                     ProdutoVestuário produto = new ProdutoVestuário(nome, preco, quantidade, tamanho);
 
                     lista.cadastroProdutoVestuário(produto);
-
-                    System.out.println("Produto Cadastrado com sucesso!");
                 }
 
                 case "3" -> {
@@ -81,7 +79,7 @@ public class main {
                     int quantidade = sc.nextInt();
                     sc.nextLine();
 
-                    System.out.println("Digite a descrição do produto: ");
+                    System.out.println("Digite a data de validade do produto: ");
                     String dataValidade = sc.nextLine();
                     sc.nextLine();
 
@@ -89,8 +87,6 @@ public class main {
                     ProdutoAlimenticio produtoAlimentício = new ProdutoAlimenticio(nome, preco, quantidade, dataValidade);
 
                     lista.cadastroProdutoAlimentício(produtoAlimentício);
-
-                    System.out.println("Produto Cadastrado com sucesso!");
                 }
 
                 case "4" -> {
@@ -100,9 +96,9 @@ public class main {
                 case "5" -> {
 
                     System.out.println("Digite o tipo do produto: ");
-                    String tipoProduto = sc.nextLine();
+                    int tipoProduto = sc.nextInt();
 
-                    if (tipoProduto == "1"){
+                    if (tipoProduto == 1){
                         lista.listarProdutos();
 
                         System.out.println("Digite o id do produto: ");
@@ -121,11 +117,11 @@ public class main {
                         sc.nextLine();
 
                         System.out.println("Digite a nova Garantia do produto: ");
-                        String garantiaMeses = sc.nextLine();
+                        int garantiaMeses = sc.nextInt();
 
                         lista.atualizarProdutoEletrônico(id, nome, valor, quantidade, garantiaMeses);
 
-                    } else if (tipoProduto == "2"){
+                    } else if (tipoProduto == 2){
                         lista.listarProdutos();
 
                         System.out.println("Digite o id do produto: ");
@@ -147,7 +143,7 @@ public class main {
                         String Tamanho = sc.nextLine();
 
                         lista.atualizarProdutoVestuário(id, nome, valor, quantidade, Tamanho);
-                    } else {
+                    } else if (tipoProduto == 3) {
                         lista.listarProdutos();
 
                         System.out.println("Digite o id do produto: ");
@@ -169,10 +165,21 @@ public class main {
                         String DataValidade = sc.nextLine();
 
                         lista.atualizarProdutoAlimentício(id, nome, valor, quantidade, DataValidade);
-
+                    } else {
+                        System.out.println("Opção Inválida, Tente Novamente");
                     }
                 }
                 case "6" -> {
+                    lista.listarProdutos();
+
+                    System.out.println("Digite o id do produto que queira remover: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+
+                    lista.removerProduto(id);
+                }
+
+                case "7" -> {
                     System.out.println("Saindo do Programa");
                     break;
                 }
