@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins =  "*")
 @RestController //Quando classifica uma APIRest, onde todos os métodos retornam dados
 @RequestMapping("/roupa")//serve para mapear requisições HTTP para métodos específicos em controladores(Servidor que está rodando o java)
 
